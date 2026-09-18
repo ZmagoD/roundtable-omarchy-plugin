@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.zmagod.roundtable",
+  "name": "Roundtable",
+  "version": "0.1.0",
+  "author": "Zmago Devetak",
+  "license": "MIT",
+  "description": "Your Roundtable rooms in the bar: who is working, and what is waiting on you.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "Panel.qml" },
+  "barWidget": {
+    "displayName": "Roundtable",
+    "description": "One bar icon and one panel: the rooms, the turns running in them, and the tool approvals a participant has stopped for.",
+    "category": "AI",
+    "aliases": ["roundtable"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 10,
+      "command": "roundtable"
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 2,
+        "max": 600,
+        "step": 1,
+        "defaultValue": 10
+      },
+      {
+        "key": "command",
+        "type": "string",
+        "label": "Roundtable command",
+        "defaultValue": "roundtable",
+        "description": "The roundtable executable, if it is not on your PATH."
+      }
+    ]
+  }
+}
