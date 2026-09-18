@@ -124,6 +124,11 @@ Item {
     }
   }
 
+  // A settings change lands on the next tick otherwise, which for someone who
+  // has just corrected the command in Setup > Plugins is a long time to watch
+  // the wrong answer.
+  onSettingsChanged: root.refresh()
+
   Timer {
     interval: root.refreshIntervalSec * 1000
     repeat: true
